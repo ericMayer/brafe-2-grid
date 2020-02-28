@@ -1,0 +1,118 @@
+/* Grid de 12 colunas que será usado */
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.container::before, .container::after { /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, 
+.grid-9, .grid-10, .grid-11, .grid-12, .grid-mobile-6 {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    display: block; /* para que pegue o conteúdo pegue todo o espaço que têm */
+    min-height: 1px; /* para o conteúdo ter obrigatoriamente um 1px de altura no mínimo, para assim poder ser exibido dependo da situação */
+}
+
+/* 100% / 12 * 1 */
+.grid-1 {
+    width: calc(8.333% - 20px);
+}
+
+/* 100% / 12 * 2 */
+.grid-2 {
+    width: calc(16.666% - 20px);
+}
+
+/* 100% / 12 * 3 */
+.grid-3 {
+    width: calc(25% - 20px);
+}
+
+.grid-4 {
+    width: calc(33.333% - 20px);
+}
+
+.grid-5 {
+    width: calc(41.666% - 20px);
+}
+
+.grid-6 {
+    width: calc(50% - 20px);
+}
+
+.grid-7 {
+    width: calc(58.333% - 20px);
+}
+
+.grid-8 {
+    width: calc(66.666% - 20px);
+}
+
+.grid-9 {
+    width: calc(75% - 20px);
+}
+
+.grid-10 {
+    width: calc(83.333% - 20px);
+}
+
+.grid-11 {
+    width: calc(91.666% - 20px);
+}
+
+.grid-12 {
+    width: calc(100% - 20px);
+}
+
+.grid-mobile-6 {
+    width: calc(50% - 20px);
+}
+
+.row, .row-mobile { /* será utilizado o mesmo conceito que é usado no bootstrap para subtrair a margem que é adicionada quando é usado grid dentro de grid */
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.row::before, .row::after, .row-mobile::before, .row-mobile::after { /* clear fix para limpar a flutuação do row, pois será usado para em elementos que estão flutuando */
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+/* Design Responsivo */
+
+/*@media only screen and (min-width: 740px) and (max-width: 980px) {
+    .container {
+        max-width: 720px; /* tirando os 20px da barra de rolagem do navegador */
+ /*   }
+}*/
+
+@media only screen and (max-width: 739px) {
+    .container {
+        max-width: 300px;
+    }
+
+    .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, 
+    .grid-9, .grid-10, .grid-11, .grid-12 {
+        width: 100%; /* todos os grids irão virar de uma coluna só */
+        margin-left: 0px;
+        margin-right: 0px;
+        float: none; /* tirando flutuação do design do celular */
+    }
+
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+}
+
+/* Fim do Design Responsivo */
